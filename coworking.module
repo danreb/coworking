@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Coworking Demonstration module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+/**
+ * Implement hook_form_alter()
+ */
+function coworking_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+   //dpm($form_id);
+    if ($form_id == 'user_login_form') {
+      $current_uri = \Drupal::request()->getRequestUri();
+      //dpm($current_uri);
+      if ($current_uri == '/user/login') {
+       // return 404
+       throw new NotFoundHttpException();
+      }
+    }
+}

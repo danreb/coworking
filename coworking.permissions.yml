@@ -1,0 +1,4 @@
+administer coworking configuration:
+  title: 'Administer coworking configuration'
+  description: 'Optional description.'
+  restrict access: true

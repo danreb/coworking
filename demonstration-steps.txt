@@ -1,0 +1,118 @@
+Pre-requisite 
+
+  1. A working Drupal 9 website or else go on and spin up a Drupal 9 Composer manage site
+
+ What are hooks in Drupal?
+
+   - Hooks are how modules can interact with the core code of Drupal. 
+
+
+ What are module in Drupal?
+
+   - A Drupal module is a collection of files that contains functionality written in PHP. Module code executes within the context of the site, it can use all the functions and access all variables and structures of Drupal core. 
+
+   If you want to alter or add functionality to Drupal, you can do it using Drupal module with the hooks.
+
+
+ Implementing a hook
+
+   - Locate the documentation for the hook. Hooks are documented in *.api.php files, by defining functions whose name starts with "hook_".
+   - Copy the function to your module's .module file.
+   - Change the name of the function, substituting your module's short name. example, implementing hook_batch_alter(), you would rename it to my_module_batch_alter().
+   - Edit the body of the function and put anything you wanted to do.
+
+
+
+ Creating a module
+     - drush generate module --destination=modules/custom
+		 Module name [Web]:
+		 ➤ Coworking Demonstration
+
+		 Module machine name [coworking_demonstration]:
+		 ➤ coworking
+
+		 Module description [Provides additional functionality for the site.]:
+		 ➤ Demonstrate how Drupal hooks work in Coworking 2022
+
+		 Package [Custom]:
+		 ➤ 
+
+		 Dependencies (comma separated):
+		 ➤ 
+
+		 Would you like to create module file? [No]:
+		 ➤ yes
+
+		 Would you like to create install file? [No]:
+		 ➤ yes
+
+		 Would you like to create libraries.yml file? [No]:
+		 ➤ yes
+
+		 Would you like to create permissions.yml file? [No]:
+		 ➤ yes
+
+		 Would you like to create event subscriber? [No]:
+		 ➤ no
+
+		 Would you like to create block plugin? [No]:
+		 ➤ no
+
+		 Would you like to create a controller? [No]:
+		 ➤ yes
+
+		 Would you like to create settings form? [No]:
+		 ➤ yes
+
+
+Commit the changes to development environment
+     - git checkout master
+     - git merge origin main
+     - git commit -am "Add coworking module"
+     - git push
+
+
+Enable the module
+     - Inspect and read the generated file
+
+
+Install Devel to help us in development
+     - composer require drupal/devel
+     - enable devel
+
+
+- Create a new route by Duplicating code from routing.yml
+- Duplicate the Controller or Page callback
+- Edit the new Controller file
+- Commit the changes
+
+
+Drupal hook demo
+   - Move login page to another path
+   - hook_form_alter() in user_login form to return 404
+  note: 
+   - change the name of the hook to the name of your module
+   - empty the body to put your modification
+
+
+  Code:
+
+
+Render the form in the new login route
+
+
+  Code:
+
+
+
+ - Install example module for developer to learn how to do many things in Drupal just by looking at the example code
+
+   
+
+
+
+
+
+
+
+

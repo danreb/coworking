@@ -1,0 +1,6 @@
+coworking.settings_form:
+  title: 'Coworking Demonstration'
+  description: 'Configure Coworking Demonstration.'
+  parent: system.admin_config_system
+  route_name: coworking.settings_form
+  weight: 10

@@ -1,0 +1,23 @@
+coworking.example:
+  path: '/coworking/example'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\coworking\Controller\CoworkingController::build'
+  requirements:
+    _permission: 'access content'
+
+coworking.login:
+  path: '/login'
+  defaults:
+    _title: 'Login'
+    _controller: '\Drupal\coworking\Controller\CoworkingLoginController::build'
+  requirements:
+    _permission: 'access content'
+
+coworking.settings_form:
+  path: '/admin/config/system/coworking'
+  defaults:
+    _title: 'Coworking Demonstration settings'
+    _form: 'Drupal\coworking\Form\SettingsForm'
+  requirements:
+    _permission: 'administer coworking configuration'
